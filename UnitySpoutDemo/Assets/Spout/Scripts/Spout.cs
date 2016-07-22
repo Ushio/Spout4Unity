@@ -56,12 +56,12 @@ namespace Spout{
 		private GCHandle handleSenderStarted;
 		private GCHandle handleSenderStopped;
 
-		#if UNITY_EDITOR
-		//To get a reference to the GameView
-		private static System.Reflection.Assembly assembly;
-		private static System.Type gameviewType;
-		private static UnityEditor.EditorWindow gameview;
-		#endif
+		//#if UNITY_EDITOR
+		////To get a reference to the GameView
+		//private static System.Reflection.Assembly assembly;
+		//private static System.Type gameviewType;
+		//private static UnityEditor.EditorWindow gameview;
+		//#endif
 
 		#pragma warning disable 414
 		[SerializeField]
@@ -157,11 +157,11 @@ namespace Spout{
 			activeLocalSenders = new List<TextureInfo>();
 			localSenderNames = new HashSet<string>();
 			
-			#if UNITY_EDITOR
-			assembly = typeof(UnityEditor.EditorWindow).Assembly;
-			gameviewType = assembly.GetType( "UnityEditor.GameView" );
-			gameview = UnityEditor.EditorWindow.GetWindow(gameviewType);
-			#endif
+			//#if UNITY_EDITOR
+			//assembly = typeof(UnityEditor.EditorWindow).Assembly;
+			//gameviewType = assembly.GetType( "UnityEditor.GameView" );
+			//gameview = UnityEditor.EditorWindow.GetWindow(gameviewType);
+			//#endif
 
 
 #if UNITY_EDITOR
@@ -223,8 +223,8 @@ namespace Spout{
 			_frameCounter++;
 			_frameCounter %= _editorUpdateFrameInterval;
 			if(_frameCounter == 0){
-				UnityEditor.SceneView.RepaintAll();
-				gameview.Repaint();
+				//UnityEditor.SceneView.RepaintAll();
+				//gameview.Repaint();
 			}
 			#endif
 
